@@ -47,14 +47,14 @@ function updateBalanceColor() {
 }
 
 //função para calcular o total das despesas por categoria
-function calculateCategoryExpenses(categoryName) {
+function calculateCategoryExpenses(category) {
   let total = 0;
 
   for (let i = 0; i < expenseEntries.length; i++) {
-    const category = expenseEntries[i][0];
+    const categoryName = expenseEntries[i][0];
     const amount = expenseEntries[i][1];
 
-    if (category === categoryName) {
+    if (categoryName === category) {
       total += amount;
     }
   }
@@ -87,4 +87,11 @@ function calculateLargestCategory() {
     }
   }
   return largestCategory;
+}
+
+//função para adicionar uma nova despesa
+function addExpenseEntry(values) {
+  expenseEntries.push(values);
+  totalExpensesValue += values[1];
+  return totalExpensesValue;
 }
