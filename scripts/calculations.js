@@ -1,7 +1,8 @@
-let budgetValue = 0;
-let totalExpensesValue = 0;
-let balanceColor;
+let budgetValue = 0; // variável para armazenar o valor do orçamento
+let totalExpensesValue = 0; // variável para armazenar o valor total das despesas
+let balanceColor; // variável para armazenar a cor do saldo
 
+//array com as despesas iniciais
 const expenseEntries = [
   ["groceries", 33],
   ["restaurants", 50],
@@ -12,6 +13,7 @@ const expenseEntries = [
   ["subscriptions", 12],
 ];
 
+//função para calcular o total das despesas
 function calculateAverageExpense() {
   if (expenseEntries.length === 0) {
     return 0;
@@ -24,10 +26,12 @@ function calculateAverageExpense() {
   return average;
 }
 
+//função para calcular o saldo
 function calculateBalance() {
   return budgetValue - totalExpensesValue;
 }
 
+//função para atualizar a cor do saldo
 function updateBalanceColor() {
   const balance = budgetValue - totalExpensesValue;
 
@@ -42,6 +46,7 @@ function updateBalanceColor() {
   return balanceColor;
 }
 
+//função para calcular o total das despesas por categoria
 function calculateCategoryExpenses(categoryName) {
   let total = 0;
 
@@ -57,6 +62,7 @@ function calculateCategoryExpenses(categoryName) {
   return total;
 }
 
+//função para calcular a categoria com maior despesa
 function calculateLargestCategory() {
   const categories = [
     "groceries",
